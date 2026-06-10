@@ -2,14 +2,14 @@
 %global user prometheus
 %global group prometheus
 
-Name: artifactory_exporter
-Version: 1.16.1
+Name:    redis_exporter
+Version: 1.86.0
 Release: 1%{?dist}
-Summary: Prometheus exporter for JFrog Artifactory stats.
-License: ASL 2.0
-URL:     https://github.com/peimanja/artifactory_exporter
+Summary: Prometheus exporter for Redis server metrics.
+License: MIT
+URL:     https://github.com/oliver006/redis_exporter
 
-Source0: https://github.com/peimanja/artifactory_exporter/releases/download/v%{version}/%{name}-v%{version}-linux-amd64.tar.gz
+Source0: https://github.com/oliver006/redis_exporter/releases/download/v%{version}/%{name}-v%{version}.linux-amd64.tar.gz
 Source1: %{name}.unit
 Source2: %{name}.default
 
@@ -17,10 +17,10 @@ Source2: %{name}.default
 Requires(pre): shadow-utils
 
 %description
-Collects metrics about an Artifactory system
+Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x, 5.x and 6.x
 
 %prep
-%setup -q -D -c %{name}-v%{version}-linux-amd64
+%setup -q -n %{name}-v%{version}.linux-amd64
 
 %build
 /bin/true
@@ -54,5 +54,5 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
-* Thu Apr 02 2026 Ivan Garcia <igarcia@cloudox.org> - 1.16.1
-- Initial packaging for the 1.16.1 branch
+* Wed Jun 10 2026 Ivan Garcia <igarcia@cloudox.org> - 1.86.0
+- Initial packaging for the 1.86.0 branch
