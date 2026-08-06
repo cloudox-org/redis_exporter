@@ -3,7 +3,7 @@
 %global group prometheus
 
 Name:    redis_exporter
-Version: 1.86.0
+Version: 1.88.0
 Release: 1%{?dist}
 Summary: Prometheus exporter for Redis server metrics.
 License: MIT
@@ -54,5 +54,7 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
+* Wed Jun 10 2026 Ivan Garcia <igarcia@cloudox.org> - 1.88.0
+- Add stream_entries_added_total
 * Wed Jun 10 2026 Ivan Garcia <igarcia@cloudox.org> - 1.86.0
 - Initial packaging for the 1.86.0 branch
